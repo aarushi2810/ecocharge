@@ -67,7 +67,7 @@ const Register = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5001/register", {
+      const res = await fetch("https://test-automation-12.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -177,3 +177,4 @@ const Register = () => {
 };
 
 export default Register;
+
