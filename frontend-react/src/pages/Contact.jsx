@@ -21,7 +21,7 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5001/contact", {
+      const res = await fetch("https://test-automation-12.onrender.com/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
