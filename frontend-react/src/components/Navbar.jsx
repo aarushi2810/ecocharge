@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 
 export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
@@ -15,28 +15,31 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
     <header className="site-header">
       <div className="nav-container">
         <Link to="/" className="brand">
-          <img src="/assets/logo.png" alt="EcoCharge logo" className="logo" />
-          <span className="brand-text">EcoCharge</span>
+          <div className="brand-mark">S</div>
+          <div className="brand-copy">
+            <span className="brand-title">SolarShare</span>
+            <span className="brand-subtitle">Energy intelligence</span>
+          </div>
         </Link>
 
         <nav className="main-nav">
-          <NavLink to="/" className="nav-link">Home</NavLink>
-          <NavLink to="/about" className="nav-link">About</NavLink>
-          <NavLink to="/contact" className="nav-link">Contact</NavLink>
-
-          {!isLoggedIn && (
-            <NavLink to="/login" className="nav-link">
+          <NavLink to="/" className="nav-link">
+            Home
+          </NavLink>
+          <NavLink to="/dashboard" className="nav-link">
+            Dashboard
+          </NavLink>
+          <NavLink to="/share-energy" className="nav-link">
+            Share Energy
+          </NavLink>
+          {!isLoggedIn ? (
+            <NavLink to="/login" className="nav-link nav-link-accent">
               Login
             </NavLink>
-          )}
-
-          {isLoggedIn && (
-            <>
-              <NavLink to="/predict" className="nav-link">Predict</NavLink>
-              <button className="nav-link logout-btn" onClick={logout}>
-                Logout
-              </button>
-            </>
+          ) : (
+            <button type="button" className="nav-link logout-btn" onClick={logout}>
+              Logout
+            </button>
           )}
         </nav>
       </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_ENDPOINTS } from "../config";
 
 const PredictionForm = ({ setPrediction }) => {
   const [formData, setFormData] = useState({
@@ -83,7 +84,7 @@ const PredictionForm = ({ setPrediction }) => {
 
     setIsLoading(true);
     try {
-      const res = await fetch("https://test-automation-12.onrender.com//predict", {
+      const res = await fetch(API_ENDPOINTS.predict, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

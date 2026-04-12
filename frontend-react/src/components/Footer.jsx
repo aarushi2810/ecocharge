@@ -1,6 +1,6 @@
 const Footer = () => (
   <footer>
-    <p>© 2025 EcoCharge | Full-Stack Solar Power Prediction System</p>
+    <p>© 2026 SolarShare. Smart solar prediction and neighborhood energy exchange.</p>
   </footer>
 );
 

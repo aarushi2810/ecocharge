@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/page.css";
 import { useNavigate } from "react-router-dom";
+import { API_ENDPOINTS } from "../config";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -67,7 +68,7 @@ const Register = () => {
     }
 
     try {
-      const res = await fetch("https://test-automation-12.onrender.com/register", {
+      const res = await fetch(API_ENDPOINTS.register, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

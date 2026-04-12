@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/page.css";
+import { API_ENDPOINTS } from "../config";
 
 const Login = ({ setIsLoggedIn }) => {
 
@@ -15,7 +16,7 @@ const Login = ({ setIsLoggedIn }) => {
     setError("");
 
     try {
-      const res = await fetch("https://test-automation-12.onrender.com/login", {
+      const res = await fetch(API_ENDPOINTS.login, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
