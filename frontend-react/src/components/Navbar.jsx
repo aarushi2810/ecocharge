@@ -15,9 +15,9 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
     <header className="site-header">
       <div className="nav-container">
         <Link to="/" className="brand">
-          <div className="brand-mark">S</div>
+          <div className="brand-mark">E</div>
           <div className="brand-copy">
-            <span className="brand-title">SolarShare</span>
+            <span className="brand-title">EcoCharge</span>
             <span className="brand-subtitle">Energy intelligence</span>
           </div>
         </Link>

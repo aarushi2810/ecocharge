@@ -7,10 +7,10 @@ export default function Home() {
     <div className="page-home">
       <section className="home-hero">
         <div className="home-copy">
-          <span className="dashboard-section-label">SolarShare platform</span>
+          <span className="dashboard-section-label">EcoCharge platform</span>
           <h1>Monitor, predict, and exchange solar energy in one dark dashboard.</h1>
           <p>
-            SolarShare brings present generation, forecasting, and neighborhood
+            EcoCharge brings present generation, forecasting, and neighborhood
             energy sharing into a single experience with modern analytics and a
             marketplace-first interface.
           </p>

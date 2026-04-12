@@ -1,6 +1,6 @@
 const Footer = () => (
   <footer>
-    <p>© 2026 SolarShare. Smart solar prediction and neighborhood energy exchange.</p>
+    <p>© 2026 EcoCharge. Smart solar prediction and neighborhood energy exchange.</p>
   </footer>
 );
 

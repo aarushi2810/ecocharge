@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("renders SolarShare navigation", () => {
+test("renders EcoCharge navigation", () => {
   render(<App />);
-  expect(screen.getByText(/SolarShare/i)).toBeInTheDocument();
+  expect(screen.getByText(/EcoCharge/i)).toBeInTheDocument();
 });
