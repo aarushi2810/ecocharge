@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/page.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { API_ENDPOINTS } from "../config";
 
 const Register = () => {
@@ -163,12 +163,9 @@ const Register = () => {
 
             <div className="auth-switch">
               <p>Already have an account?</p>
-              <span
-                onClick={() => navigate("/login")}
-                className="auth-link"
-              >
+              <Link to="/login" className="auth-link">
                 Login
-              </span>
+              </Link>
             </div>
           </>
         )}
