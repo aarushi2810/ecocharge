@@ -1,4 +1,41 @@
-EcoCharge is a full-stack machine learning web application that predicts AC power output of a solar plant based on environmental and historical generation data.
-It combines React frontend, Flask backend, and a Scikit-learn ML model to provide real-time predictions and visualize power trends.
+⚡ EcoCharge – Solar Power Prediction & Energy Sharing Platform
 
-The goal of the project is to help solar plant operators, communities, and apartment complexes estimate expected energy production using historical and weather data.
+EcoCharge is a full-stack web application that predicts solar power output using machine learning and provides a modern dashboard for monitoring, analytics, and energy sharing between users.
+
+⸻
+
+ Live Features
+	•	 Solar Power Prediction
+	•	Predict AC power output using ML model
+	•	Inputs: irradiance, temperature, previous outputs, rolling averages
+	•	 Unified Dashboard
+	•	Live metrics (current output, efficiency, peak)
+	•	Prediction panel
+	•	Historical data tracking
+	•	Analytics (avg output, max output, total predictions)
+	•	 Energy Sharing Module
+	•	Users can list available surplus solar energy
+	•	View and browse energy listings
+	•	Marketplace-style UI
+	•	 Authentication
+	•	Login & Registration UI
+	•	Session-based navigation
+
+⸻
+
+ Tech Stack
+
+Frontend
+	•	React.js
+	•	CSS (Custom UI + Dashboard design)
+	•	State management with useState and useEffect
+
+Backend
+	•	Node.js (Express)
+	•	Flask (ML microservice)
+	•	MongoDB Atlas (Cloud Database)
+
+Machine Learning
+	•	Random Forest Regressor
+	•	Trained on synthetic solar dataset
+	•	Stored as model.pkl
