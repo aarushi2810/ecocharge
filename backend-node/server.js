@@ -12,7 +12,10 @@ const { runModelPrediction } = require("./services/predictService");
 
 const app = express();
 const port = Number(process.env.PORT || 5001);
-const mongoUri = process.env.MONGODB_URI;
+const mongoUri =
+  process.env.MONGODB_URI ||
+  process.env.MONGO_URI ||
+  process.env.MONGO_DB;
 const passwordSaltRounds = 10;
 
 app.use(cors());
@@ -181,7 +184,7 @@ app.get("/logs", async (_request, response) => {
 
 async function startServer() {
   if (!mongoUri) {
-    throw new Error("MONGODB_URI is not configured");
+    throw new Error("MongoDB connection string is not configured");
   }
 
   await mongoose.connect(mongoUri);

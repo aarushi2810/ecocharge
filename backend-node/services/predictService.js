@@ -1,7 +1,7 @@
 const path = require("path");
 const { spawn } = require("child_process");
 
-const pythonExecutable = process.env.PYTHON_EXECUTABLE || "python";
+const pythonExecutable = process.env.PYTHON_EXECUTABLE || "python3";
 const modelPath = path.resolve(
   __dirname,
   process.env.MODEL_PATH || "../../ml_backend/model.pkl"
