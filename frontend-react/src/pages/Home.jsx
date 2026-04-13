@@ -1,8 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useMemo, useState } from "react";
 import "../styles/page.css";
+import {
+  getPredictionAnalytics,
+  getPredictionHistory,
+  getTodayGeneration,
+  subscribeToPredictionHistory
+} from "../utils/predictionHistory";
+
+const formatBestDay = (value) => {
+  if (!value || value === "N/A") {
+    return "No data";
+  }
+
+  return new Intl.DateTimeFormat("en-IN", {
+    day: "2-digit",
+    month: "short"
+  }).format(new Date(value));
+};
 
 export default function Home() {
+  const [history, setHistory] = useState(() => getPredictionHistory());
+
+  useEffect(() => subscribeToPredictionHistory(setHistory), []);
+
+  const analytics = useMemo(() => getPredictionAnalytics(history), [history]);
+  const todayGeneration = useMemo(() => getTodayGeneration(history), [history]);
+
   return (
     <div className="page-home">
       <section className="home-hero">
@@ -16,30 +39,22 @@ export default function Home() {
             community revenue.
           </p>
 
-          <div className="home-actions">
-            <Link to="/dashboard" className="energy-button">
-              Open Dashboard
-            </Link>
-            <Link to="/share-energy" className="secondary-energy-button">
-              Explore Energy Market
-            </Link>
-          </div>
         </div>
 
         <div className="home-preview dashboard-card">
           <div className="preview-orb" />
           <div className="preview-topline">
             <span>Today's generation</span>
-            <strong>18.6 kWh</strong>
+            <strong>{todayGeneration.toFixed(1)} kWh</strong>
           </div>
           <div className="preview-grid">
             <div>
               <span>Live load</span>
-              <strong>0.8 kW</strong>
+              <strong>{analytics.latestOutput.toFixed(2)} kW</strong>
             </div>
             <div>
               <span>Predictions</span>
-              <strong>128</strong>
+              <strong>{analytics.totalPredictions}</strong>
             </div>
             <div>
               <span>Share offers</span>
@@ -47,7 +62,7 @@ export default function Home() {
             </div>
             <div>
               <span>Best day</span>
-              <strong>11 Apr</strong>
+              <strong>{formatBestDay(analytics.bestDay)}</strong>
             </div>
           </div>
         </div>
